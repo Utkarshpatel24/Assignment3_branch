@@ -1,0 +1,37 @@
+<!-- <html>
+    <body>
+        <h2>
+            Do login
+        </h2>
+    </body>
+</html> -->
+<h2>Login using this form</h2>
+
+<?php echo $this->tag->form("login/register"); ?>
+
+   
+    <p>
+        <label for="email">E-Mail</label>
+        <?php echo $this->tag->textField("email"); ?>
+    </p>
+
+    <p>
+        <label for="password">Password</label>
+        <?php echo $this->tag->textField("password"); ?>
+    </p>
+ 
+
+    <p>
+        <?php echo $this->tag->submitButton("Login"); ?>
+    </p>
+
+    <?php
+    echo $this->tag->linkTo(
+        'signup',
+        'Signup Here !'
+    );?>
+
+
+</form>
+
+

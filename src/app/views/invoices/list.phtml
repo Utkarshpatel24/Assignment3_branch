@@ -1,0 +1,23 @@
+<?php echo "<h1>Pagenation</h1>";  ?>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Status</th>
+        <th>Title</th>
+    </tr>
+    <?php foreach ($page->getItems() as $item) { ?>
+    <tr>
+        <td><?php echo $item['user_id']; ?></td>
+        <td><?php echo ($item['name']) ? 'Paid' : ''; ?></td>
+        <td><?php echo $item['email']; ?></td>
+    </tr>
+    <?php } ?>
+</table>
+
+<a href="/invoices/list">First</a>
+<a href="/invoices/list?page=<?= $page->getPrevious(); ?>">Previous</a>
+<a href="/invoices/list?page=<?= $page->getNext(); ?>">Next</a>
+<a href="/invoices/list?page=<?= $page->getLast(); ?>">Last</a>
+
+<?php echo "Page {$page->getCurrent()}  of {$page->getLast()}"; ?>
